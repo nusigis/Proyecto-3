@@ -1,0 +1,57 @@
+<!-- <form>
+  <div class="form-group row" >
+    <label class="col-2" for="name">Name</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="name" placeholder="Enter your name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Last Name</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Adress</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="adress" placeholder="Enter your adress">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Age</label>
+    <div class="col-10">
+      <input type="number" class="form-control" id="age" placeholder="Enter your age">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="handleSubmit($event)">Submit</button>
+</form> -->
+<form [formGroup]= "userForm">
+  <div class="form-group row" >
+    <label class="col-2" for="name">Name</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="name" placeholder="Enter your name" formControlName="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Last Name</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" formControlName="lastName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Adress</label>
+    <div class="col-10">
+      <input type="text" class="form-control" id="adress" placeholder="Enter your adress" formControlName="adress">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-2" for="name">Age</label>
+    <div class="col-10">
+      <input type="number" class="form-control" id="age" placeholder="Enter your age" formControlName="age">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="handleSubmit($event)" [disabled] = "!userForm.valid">Submit</button>
+</form>
+
+<div>{{ userForm.value | json }}</div>
+<div>{{ userForm.valid }}</div>
